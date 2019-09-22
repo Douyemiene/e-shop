@@ -33,7 +33,7 @@ const Header = ({ currentUser, hidden }) => (
     {hidden && <CartDropdown />}
   </div>
 );
-//const mapStateToProps = state => a way of destruturing twice
+//const mapStateToProps = state => a way of destructuring twice
 const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
   currentUser,
   hidden
