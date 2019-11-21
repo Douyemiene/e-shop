@@ -10,28 +10,34 @@ import { connect } from "react-redux";
 import {selectCurrentUser}  from "./redux/user/user.selectors";
 import {createStructuredSelector} from 'reselect'
 import {checkUserSession} from './redux/user/user.actions'
+import {
+  addCollectionAndDocuments
+} from './firebase/firebase.util'
+import {
+  selectCollectionsForPreview
+} from './redux/shop/shop.selectors'
+import SHOP_DATA from './redux/shop/shop.data';
 class App extends React.Component {
-  unsubscribeFromAuth = null;
+  //unsubscribeFromAuth = null;
   componentDidMount() {
-     const {checkUserSession} = this.props
+     const {checkUserSession/*, collectionsArray*/} = this.props
      checkUserSession()
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
-        //onSnapShot listens for changes to the data
-      //   userRef.onSnapshot(snapShot => {
-      //     //whenever snapshot updates set user reducer value with new object
-      //     setCurrentUser({
-      //       id: snapShot.id,
-      //       ...snapShot.data()
-      //   });
-      // }
-      // setCurrentUser(userAuth);
-      // });
+    //  const x = collectionsArray.map(({
+    //    title,
+    //    items
+    //  }) => ({
+    //    title,
+    //    items
+    //  }))
+    //  console.log(x)
+    //  //addCollectionAndDocuments('abcdef',x)
+    //   console.log(x)
   }
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
+
+  // componentWillUnmount() {
+  //   this.unsubscribeFromAuth();
+  // }
+  
   render() {
     return (
       <div>
@@ -62,7 +68,8 @@ const mapDispatchToProps = dispatch => ({
   checkUserSession: () => dispatch(checkUserSession())
 })
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
+  currentUser: selectCurrentUser/*,
+  collectionsArray: selectCollectionsForPreview*/
 });
 export default connect(
   mapStateToProps, mapDispatchToProps

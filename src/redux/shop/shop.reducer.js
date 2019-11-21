@@ -1,6 +1,7 @@
 import ShopActionTypes from './shop.types'
+import SHOP_DATA from './shop.data';
 const INITIAL_STATE = {
-  collections: null,
+  collections: null, //SHOP_DATA,
   isFetching: false,
   errorMessage: undefined
 };
