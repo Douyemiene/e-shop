@@ -21,15 +21,14 @@ export const ImageContainer = styled.div`
 export const TextContainer = styled.span`
   width: 23%;
 `;
-export const QuantityContainer = styled.span`
-    display: flex;
-    width: 23%;
-    div {
-      cursor: pointer;
-    }
-    span {
-      margin: 0 10px;
-    }
+
+export const QuanityContainer = styled(TextContainer)`
+  display: flex;
+  div {
+    cursor: pointer;
+  }
+  span {
+    margin: 0 10px;
   }
 `;
 export const RemoveButtonContainer = styled.div`
