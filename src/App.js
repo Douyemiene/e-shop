@@ -10,9 +10,6 @@ import { connect } from "react-redux";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
 import { checkUserSession } from "./redux/user/user.actions";
-import { addCollectionAndDocuments } from "./firebase/firebase.util";
-import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
-import SHOP_DATA from "./redux/shop/shop.data";
 class App extends React.Component {
   componentDidMount() {
     const { checkUserSession } = this.props;
